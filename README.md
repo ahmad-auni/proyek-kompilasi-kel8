@@ -1,6 +1,5 @@
 # Proyek Kompilasi Kelompok 8
-Bahasa yang digunakan : Python
-Rencana program yang akan ditulis
+Bahasa yang digunakan : Python. Rencana program yang akan ditulis:
 - hello world
 - aritmetika
 - for
