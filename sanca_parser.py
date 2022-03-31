@@ -17,6 +17,39 @@ class BasicParser(Parser):
     def statement(self, p):
         pass
 
+    #Literals
+    @_('var_assign')
+    def statement(self, p):
+        return p.var_assign
+
+    @_('NAME "=" expr')
+    def var_assign(self, p):
+        return ('var_assign', p.NAME, p.expr)
+
+    @_('expr')
+    def statement(self, p):
+        return (p.expr)
+
+    @_('expr "+" expr')
+    def expr(self, p):
+        return ('add', p.expr0, p.expr1)
+
+    @_('expr "-" expr')
+    def expr(self, p):
+        return ('sub', p.expr0, p.expr1)
+
+    @_('expr "*" expr')
+    def expr(self, p):
+        return ('mul', p.expr0, p.expr1)
+
+    @_('expr "/" expr')
+    def expr(self, p):
+        return ('div', p.expr0, p.expr1)
+
+    @_('"-" expr %prec UMINUS')
+    def expr(self, p):
+        return p.expr
+
     #Tokens
     @_('NAME')
     def expr(self, p):
@@ -58,38 +91,6 @@ class BasicParser(Parser):
     def condition(self, p):
         return ('condition_eqeq', p.expr0, p.expr1)
 
-    #Literals
-    @_('var_assign')
-    def statement(self, p):
-        return p.var_assign
-
-    @_('NAME "=" expr')
-    def var_assign(self, p):
-        return ('var_assign', p.NAME, p.expr)
-
-    @_('expr')
-    def statement(self, p):
-        return (p.expr)
-
-    @_('expr "+" expr')
-    def expr(self, p):
-        return ('add', p.expr0, p.expr1)
-
-    @_('expr "-" expr')
-    def expr(self, p):
-        return ('sub', p.expr0, p.expr1)
-
-    @_('expr "*" expr')
-    def expr(self, p):
-        return ('mul', p.expr0, p.expr1)
-
-    @_('expr "/" expr')
-    def expr(self, p):
-        return ('div', p.expr0, p.expr1)
-
-    @_('"-" expr %prec UMINUS')
-    def expr(self, p):
-        return p.expr
 
     #tree
 if __name__ == '__main__':
