@@ -22,10 +22,6 @@ class BasicParser(Parser):
     def statement(self, p):
         return p.var_assign
 
-    @_('NAME "=" expr')
-    def var_assign(self, p):
-        return ('var_assign', p.NAME, p.expr)
-
     @_('expr')
     def statement(self, p):
         return (p.expr)
@@ -63,6 +59,10 @@ class BasicParser(Parser):
     def var_assign(self, p):
         return ('var_assign', p.NAME, p.STRING)
 
+    @_('NAME "=" expr')
+    def var_assign(self, p):
+        return ('var_assign', p.NAME, p.expr)
+
     @_('PRINT STRING')
     def statement(self, p):
         return ('print', p.STRING)
@@ -87,12 +87,12 @@ class BasicParser(Parser):
     def statement(self, p):
         return ('fun_call', p.NAME)
 
-    @_('expr EQ expr')
+    @_('expr EQEQ expr')
     def condition(self, p):
         return ('condition_eqeq', p.expr0, p.expr1)
 
 
-    #tree
+    #Tree
 if __name__ == '__main__':
     lexer = sanca_lexer.BasicLexer()
     parser = BasicParser()

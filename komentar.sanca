@@ -1,0 +1,5 @@
+%komentar
+cetak "Kalau ingin membuat komentar, gunakan persen (%)"
+a = "ini belum diberi persen (%)"
+a
+%a

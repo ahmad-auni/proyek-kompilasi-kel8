@@ -1,0 +1,10 @@
+%contoh program aritmetika
+9 + 16
+4 - 10
+3 * 9
+100/20
+4 - 10/2
+
+cetak "Aritmetika yang lebih kompleks"
+cetak "Hasil dari 9 + 16 / 4 - 10 + 3 * 9 + 100/20 + 4 - 10/2 adalah : "
+9 + 16 / 4 - 10 + 3 * 9 + 100/20 + 4 - 10/2

@@ -1,0 +1,5 @@
+%contoh program hello world
+
+cetak "Hello World!"
+cetak "Bahasa sanca adalah bahasa python yang diterjemahkan ke bahasa Indonesia"
+

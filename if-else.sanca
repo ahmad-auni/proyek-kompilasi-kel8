@@ -1,0 +1,6 @@
+jawab=109
+benar="Jawaban benar!"
+salah="Jawaban salah!"
+
+cetak "Tebak angka dari 100-110!"
+kalau jawab == 101 maka cetak benar jikalautidak cetak salah
