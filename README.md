@@ -6,4 +6,3 @@ Bahasa yang digunakan : Python. Rencana program yang akan ditulis:
 - if-else
 - fungsi
 - komentar
-- permainan tebak angka
